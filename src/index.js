@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-const span = React.createElement('span', {}, 'I\'m span');
-const element = React.createElement('h1', {
-    className: 'my-class'
-}, span)
+const Element = () => {
+    return <div>my first page</div>
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(element);
+root.render(<Element/>);
 
 
