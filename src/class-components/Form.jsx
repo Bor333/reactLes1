@@ -1,24 +1,19 @@
 import React from 'react'
 
 export class Form extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            count: 1,
-            name: 'geekbrains'
-        }
-        this.handleClick = this.handleClick.bind(this)
+    state = {
+        count: 1,
+        name: 'geekbrains'
     }
 
-    handleClick(params) {
-        this.setState({count: 2})
+    handleChangeName = (ev) => {
+        this.setState({name: ev.target.value})
     }
 
     render() {
         return <form>
-            <p>Count: {this.state.count}</p>
             <p>Name: {this.state.name}</p>
-            <button type="button" onClick={this.handleClick}>click</button>
+            <input type="text" onChange={this.handleChangeName}/>
         </form>
     }
 
