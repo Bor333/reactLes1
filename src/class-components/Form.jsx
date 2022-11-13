@@ -10,10 +10,16 @@ export class Form extends React.Component {
         this.setState({name: ev.target.value})
     }
 
+    handleSubmit = (ev) => {
+        ev.preventDefault();
+        console.log(ev.target.elements.password.value)
+    }
+
     render() {
-        return <form>
-            <p>Name: {this.state.name}</p>
-            <input type="text" onChange={this.handleChangeName}/>
+        return <form onSubmit={this.handleSubmit}>
+            <input type="text" onChange={this.handleChangeName} name="login"/>
+            <input type="text" name="password"/>
+            <button>send form</button>
         </form>
     }
 

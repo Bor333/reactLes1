@@ -10,7 +10,8 @@ export class Count extends React.Component {
 
     render() {
         return <div>
-            <p>Count: {this.state.count}</p>
+            <p>Count props: {this.props.count}</p>
+            <p>Count state: {this.state.count}</p>
             <button type="button" onClick={this.handleClick}>click</button>
      </div>
     }
